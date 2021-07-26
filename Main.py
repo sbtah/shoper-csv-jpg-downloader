@@ -24,7 +24,7 @@ for (product_code, active, name, price, vat, unit, category, producer, other_pri
 
 for article in list_art:
 
-    print(f'{article.name}')
+    print(f'{article.name} - done!')
 
     try:
         if article:
