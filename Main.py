@@ -27,33 +27,39 @@ for article in list_art:
     print(f'{article.name}')
 
     try:
-        if article.images_1:
-            r = requests.get(article.images_1)
+        if article:
+
+            r1 = requests.get(article.images_1)
             with open(f"{article.name}/{article.name}-1.jpg", "wb") as f:
-                f.write(r.content)
-    except:
-        continue
+                f.write(r1.content)
 
-for article in list_art:
-
-    print(f'{article.name}')
-
-    try:
-        if article.images_2:
-            r = requests.get(article.images_2)
+            r2 = requests.get(article.images_2)
             with open(f"{article.name}/{article.name}-2.jpg", "wb") as f:
-                f.write(r.content)
-    except:
-        continue
+                f.write(r2.content)
 
-for article in list_art:
-
-    print(f'{article.name}')
-
-    try:
-        if article.images_3:
-            r = requests.get(article.images_3)
+            r3 = requests.get(article.images_3)
             with open(f"{article.name}/{article.name}-3.jpg", "wb") as f:
-                f.write(r.content)
+                f.write(r3.content)
+
+            r4 = requests.get(article.images_4)
+            with open(f"{article.name}/{article.name}-4.jpg", "wb") as f:
+                f.write(r4.content)
+
+            r5 = requests.get(article.images_5)
+            with open(f"{article.name}/{article.name}-5.jpg", "wb") as f:
+                f.write(r5.content)
+
+            r6 = requests.get(article.images_6)
+            with open(f"{article.name}/{article.name}-6.jpg", "wb") as f:
+                f.write(r6.content)
+
+            r7 = requests.get(article.images_7)
+            with open(f"{article.name}/{article.name}-7.jpg", "wb") as f:
+                f.write(r7.content)
+
+            r8 = requests.get(article.images_8)
+            with open(f"{article.name}/{article.name}-8.jpg", "wb") as f:
+                f.write(r8.content)
+
     except:
         continue
