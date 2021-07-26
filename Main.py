@@ -3,8 +3,11 @@ from Article import Article
 import requests
 import os
 
+
+FILE_PATH = 'shisa.product.csv'
+
 list_art = []
-init_file = Reader("shisa.product.csv")
+init_file = Reader(FILE_PATH)
 new_file = init_file.read(init_file.filepath)
 
 os.mkdir('Articles')
@@ -22,44 +25,54 @@ for (product_code, active, name, price, vat, unit, category, producer, other_pri
 
 # This is ultra DUMB!
 
-for article in list_art:
 
-    print(f'{article.name} - done!')
+def downloader():
+    for article in list_art:
 
-    try:
-        if article:
+        try:
+            if article:
 
-            r1 = requests.get(article.images_1)
-            with open(f"{article.name}/{article.name}-1.jpg", "wb") as f:
-                f.write(r1.content)
+                r1 = requests.get(article.images_1)
+                with open(f"{article.name}/{article.name}-1.jpg", "wb") as f:
+                    f.write(r1.content)
+                    print(f'{article.name} 1 - done!')
 
-            r2 = requests.get(article.images_2)
-            with open(f"{article.name}/{article.name}-2.jpg", "wb") as f:
-                f.write(r2.content)
+                r2 = requests.get(article.images_2)
+                with open(f"{article.name}/{article.name}-2.jpg", "wb") as f:
+                    f.write(r2.content)
+                    print(f'{article.name} 2 - done!')
 
-            r3 = requests.get(article.images_3)
-            with open(f"{article.name}/{article.name}-3.jpg", "wb") as f:
-                f.write(r3.content)
+                r3 = requests.get(article.images_3)
+                with open(f"{article.name}/{article.name}-3.jpg", "wb") as f:
+                    f.write(r3.content)
+                    print(f'{article.name} 3 - done!')
 
-            r4 = requests.get(article.images_4)
-            with open(f"{article.name}/{article.name}-4.jpg", "wb") as f:
-                f.write(r4.content)
+                r4 = requests.get(article.images_4)
+                with open(f"{article.name}/{article.name}-4.jpg", "wb") as f:
+                    f.write(r4.content)
+                    print(f'{article.name} 4 - done!')
 
-            r5 = requests.get(article.images_5)
-            with open(f"{article.name}/{article.name}-5.jpg", "wb") as f:
-                f.write(r5.content)
+                r5 = requests.get(article.images_5)
+                with open(f"{article.name}/{article.name}-5.jpg", "wb") as f:
+                    f.write(r5.content)
+                    print(f'{article.name} 5 - done!')
 
-            r6 = requests.get(article.images_6)
-            with open(f"{article.name}/{article.name}-6.jpg", "wb") as f:
-                f.write(r6.content)
+                r6 = requests.get(article.images_6)
+                with open(f"{article.name}/{article.name}-6.jpg", "wb") as f:
+                    f.write(r6.content)
+                    print(f'{article.name} 6 - done!')
 
-            r7 = requests.get(article.images_7)
-            with open(f"{article.name}/{article.name}-7.jpg", "wb") as f:
-                f.write(r7.content)
+                r7 = requests.get(article.images_7)
+                with open(f"{article.name}/{article.name}-7.jpg", "wb") as f:
+                    f.write(r7.content)
+                    print(f'{article.name} 7 - done!')
 
-            r8 = requests.get(article.images_8)
-            with open(f"{article.name}/{article.name}-8.jpg", "wb") as f:
-                f.write(r8.content)
+                r8 = requests.get(article.images_8)
+                with open(f"{article.name}/{article.name}-8.jpg", "wb") as f:
+                    f.write(r8.content)
+                    print(f'{article.name} 8 - done!')
+        except:
+            continue
 
-    except:
-        continue
+
+downloader()
